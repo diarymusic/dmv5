@@ -1,0 +1,115 @@
+<div class="bg-black">
+    <nav class="navbar navbar-light bg-light sticky-top flex-row bg-transparent text-white">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="#">
+                <iframe src="/static/diary.svg" type="image/svg+xml" class="logo text-white" title="Diary Music (Logo)"></iframe>
+            </a>
+            <ul class="navbar-nav justify-content-start flex-md-nowrap flex-grow-1 pe-3 d-none d-md-flex flex-row">
+                <li class="nav-item pe-3">
+                    <router-link class="nav-link active text-white" aria-current="page" to="/">主页</router-link>
+                </li>
+                <li class="nav-item pe-3">
+                    <router-link class="nav-link text-white" to="/intro">节奏阵列展示页面</router-link>
+                </li>
+                <li class="nav-item pe-3">
+                    <router-link class="nav-link text-white" to="/passage">文章</router-link>
+                </li>
+                <li class="nav-item pe-3">
+                    <router-link class="nav-link text-white" to="/chat">站内聊天</router-link>
+                </li>
+                <!-- admin? -->
+                <template v-if="isAdmin">
+                    <li class="nav-item pe-3">
+                        <router-link class="nav-link text-white" to="/backstage">后台管理</router-link>
+                    </li>
+                </template>
+
+            </ul>
+            <div class="separatorleft"></div>
+            <div class="logo-name" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <div class="logo-image">
+                    <img :src="user.ava" alt="" id="userAvatar" class="userAvatar">
+                </div>
+                <span class="logo_name pe-3 d-none d-md-flex userName me-3" id="userName">{{user.name}}</span>
+                <template v-if="isLogin">
+                    <span class="logo_uid pe-3 d-none d-md-flex userId" id="userId">{{user.uid}}</span>
+                </template>
+            </div>
+        </div>
+    </nav>
+    <div class="offcanvas offcanvas-end text-black" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DIARY MUSIC -- 记事簿音乐</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="logo-name mb-3">
+                <div class="logo-image">
+                    <img :src="user.ava" alt="" id="userAvataroc" class="userAvatar">
+                </div>
+
+                <span class="logo_name userName me-3" id="userNameoc">{{user.name}}</span>
+                <template v-if="isLogin">
+                    <span class="logo_uid userId" id="userIdoc">{{user.uid}}</span>
+                </template>
+            </div>
+            <!--login?  -->
+            <template v-if="isLogin">
+                <router-link to="changeInfo" class="me-3">修改信息</router-link>
+                <router-link to="userInfo" class="me-3">个人中心</router-link>
+                <a @click="logout" class="signoutBtn b">退出登录</a>
+            </template>
+
+            <!-- guest? -->
+            <template v-else="isLogin"><router-link to="login" class="me-3">登录</router-link></template>
+
+            <div class="separator"></div>
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <router-link class="nav-link active" aria-current="page" to="/">主页</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/intro">嵌入展示「节奏阵列」 页面</router-link>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.beatarray.com/label/DiaryMusic">我们的「节奏阵列」主页</a>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/passage">文章</router-link>
+                </li>
+                <li class="nav-item pe-3">
+                    <router-link class="nav-link" to="/chat">站内聊天</router-link>
+                </li>
+
+                <!-- admin? -->
+                <li class="nav-item pe-3">
+                    <router-link class="nav-link" to="/backstage">后台管理</router-link>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <router-view></router-view>
+    <div class="toast-container position-fixed p-3 bottom-0 end-0 text-black">
+    </div>
+    <!-- ========== End Toast ========== -->
+    <div class="modal fade" id="broadcast" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mth" id="modalTitleId"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body mtb">
+                </div>
+                <div class="modal-footer justify-content-start">
+                    <p>发布者：<span class="passOwner"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</div>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary Music</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        jsLoader("bootstrap.bundle.min.js","lbl-min.js")
+    </script>
+
+</head>
+
+<body>
+    <div id="page" class="site">
+        <div class="container">
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col-xs-8 col-sm-10 col-md-6 col-lg-6">
+                    <div class="hero">
+                        <h1 class="typing" data-text="您可在此修改您的密码."></h1><a href="/?action=login">返回登录</a>
+                    </div>
+                </div>
+                <div class="col-xs-8 col-sm-10 col-md-6 col-lg-6">
+                    <div class="login">
+
+                        <div class="main">
+                            <form>
+                                <p class="side-icon">
+                                    <input type="email" id="ue" name="ue" placeholder="您的邮箱地址">
+                                    <i class="ri-mail-line"></i>
+                                </p>
+                                <p class="side-icon">
+                                    <input type="password" id="npw" name="npw" placeholder="您的密码">
+                                    <i class="ri-eye-off-line"></i>
+
+                                </p>
+                                <p class="side-icon">
+                                    <input type="password" id="repsw" name="repsw" placeholder="重复密码">
+                                    <i class="ri-eye-off-line"></i>
+
+                                </p>
+                                <div class="side-icon">
+                                    <div class="row justify-content-center align-items-center">
+                                        <div class="col-8" id="vfi">
+                                            <input type="number" name="vf" placeholder="验证码" required>
+                                            <!-- <i class="ri-mail-send-line"></i> -->
+                                        </div>
+                                        <div class="col-4" id="vfb">
+                                            <button type="button" class="send">
+                                                <span class="spinner-border spinner-border-sm d-none" role="status"
+                                                    aria-hidden="true" id="vfsp"></span>
+                                                发送
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>
+                                    <input type="button" class="submit" value="修改">
+                                </p>
+                            </form>
+                            <!-- <div class="options">
+                                <div class="separator">
+                                    <p>通过其它方式登录</p>
+                                </div>
+                                <ul>
+                                    <li><a href="#"><i class="ri-pass-valid-fill ri-2x"></i></a></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        jsLoader("crypt/sha256.js","fpw/fpw.js",`Custom:: $(function ($) {
+                var tptxt = document.getElementsByClassName('typing');
+                var tp = tptxt[0].getAttribute('data-text');
+                $(".typing").lbyl({
+                    content: tp,
+                    speed: 50,
+                    type: 'fade',
+                    finished: function () {
+                    } // Finished Callback
+                });
+            });`,)
+    </script>
+        <script>
+            
+        </script>
+</body>
+
+</html>

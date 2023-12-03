@@ -1,0 +1,39 @@
+<?php
+session_start();
+// 存储 session 数据
+$json_file = file_get_contents('views.json');
+// var_dump($json_string);
+$datav = json_decode($json_file, true);
+var_dump($datav);
+$_SESSION['views']=$datav;
+
+// 把JSON字符串转成PHP数组
+
+?>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<?php
+// 检索 session 数据
+echo "浏览量：". $_SESSION['views'];
+?>
+    <?php
+// 生成一个PHP数组
+$data = array();
+$data['name'] = '测试';
+$data['pwd'] = '测试';
+ 
+// 把PHP数组转成JSON字符串
+$json_string = json_encode($data,JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+ 
+// 写入文件
+file_put_contents('user.json', $json_string);
+?>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary Music</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body inmaintabuse="1" style="
+    font-family: 'Noto Sans SC', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.8 !important;
+    color: var(--dark-color) !important;
+    background-color: var(--background-color) !important;
+    -webkit-user-select: none !important;
+    -webkit-user-drag: none !important;
+">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&display=swap');
+        /*@keyframes shake {
+    10%, 90% { transform: translate3d(-0.1px, -0.2px, 0); }
+    20%, 80% { transform: translate3d(+0.2px, 0.1px, 0); }
+    30%, 70% { transform: translate3d(-0.4px, -0.2px, 0); }
+    40%, 60% { transform: translate3d(+0.4px, 0.2px, 0); }
+    50% { transform: translate3d(-0.4px, -0.2px, 0); }
+}*/
+
+        @keyframes horizontal {
+            from {
+                transform: translateX(0vw);
+            }
+
+            to {
+                transform: translateX(1vw);
+            }
+        }
+
+        @keyframes vertical {
+            from {
+                transform: translateY(0vh);
+            }
+
+            to {
+                transform: translateY(1vh);
+            }
+        }
+
+        :root {
+            --primary-color: #4460f1;
+            --white-color: #ffffff;
+
+            --light-text-color: #9398b3;
+            --light-bg-color: #f2f4ff;
+            --dark-color: #333333;
+
+            --background-color: #fcfcff;
+        }
+
+        * :not(body, html) {
+            transition: all 0.4s;
+            margin: 0;
+            padding: 0;
+            /* animation:  */
+            /* horizontal 26s infinite ease alternate, */
+            /* vertical 19s infinite alternate ease; */
+        }
+
+        *,
+        ::before::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 400 !important;
+            line-height: 1.8 !important;
+            color: var(--dark-color) !important;
+            background-color: var(--background-color) !important;
+            -webkit-user-select: none !important;
+            -webkit-user-drag: none !important;
+        }
+
+        .hero {
+            flex: 1 0 66.6666% !important;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 50px !important;
+            padding: 70px 0 !important;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 15%;
+            left: 0;
+            width: 280px;
+            height: 100px;
+            background: radial-gradient(circle at 0%, var(--primary-color) 25%, #c471ed 50%, #f64f59 100%);
+            z-index: -1;
+            filter: blur(70px);
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            line-height: normal;
+            color: black;
+        }
+
+        .verificationCode {
+            font-size: 8rem;
+        }
+    </style>
+
+    <div id="page" class="site" style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+">
+        <div class="container" style="max-width: 1024px;">
+            <div class="row justify-content-center align-items-center g-2" style="
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center!important;
+    justify-content: center!important;
+">
+                <div class="col-xs-8 col-sm-10 col-md-8 col-lg-8" style="
+    flex: 0 0 auto;
+    width: 66.66666667%;
+">
+                    <div class="hero"
+                        style="flex: 1 0 66.6666%!important;position: relative;display: flex;flex-direction: column;gap: 50px!important;padding: 70px 0!important;">
+                        <center>
+                            <h1 class="text-center" data-text="" style="
+    text-align: center!important;
+">您好！您在 Diary Music 的验证码为：</h1><br>
+                            <h1 class="text-center verificationCode" style="
+    /* font-family: Noto; */
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: normal;
+    color: black;
+">{{code}}</h1>
+                            <p class="text-center text-muted" style="
+    color: #6c757d!important;
+    text-align: center!important;
+">如果不显示验证码，请重发验证码</p>
+                        </center>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

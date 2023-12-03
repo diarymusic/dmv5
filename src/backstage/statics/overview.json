@@ -1,0 +1,29 @@
+{
+    "status": 0,
+    "msg": "获取成功",
+    "data": {
+        "submit": {
+            "total": 164,
+            "pass1": 3,
+            "pass2": 41,
+            "unresolved": 2,
+            "rejected": 118,
+            "passRatio": "25.00"
+        },
+        "labelStar": {
+            "total": 17
+        },
+        "labelBlacklist": {
+            "total": 0
+        },
+        "labelMember": {
+            "total": 0
+        },
+        "labelRole": {
+            "total": 9,
+            "rootAdmin": 1,
+            "admin": 4,
+            "audit": 4
+        }
+    }
+}

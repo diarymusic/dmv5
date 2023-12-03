@@ -1,0 +1,19 @@
+<section class="dashboard">
+    <br><br><br><br>
+<div class="container">
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col">该功能已弃用</div>
+    </div>
+</div>
+</section>
+<script>
+    flag_i=0;
+    $('textarea[name=i]').on('click',()=>{
+        if(flag_i!==1){
+            flag_i=1
+            $('textarea[name=i]').empty().text('“”')
+            document.getElementById("TA").selectionStart = 1
+        }
+        
+    })
+</script>

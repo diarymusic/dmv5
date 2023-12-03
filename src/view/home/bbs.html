@@ -1,0 +1,200 @@
+<div class="container-fluid mt-3">
+    <div class="row justify-content-end align-items-center g-2">
+        <div class="d-flex col justify-content-end align-items-center p-3">
+            <button class="d-flex btn btn-outline-dark relPassageBtn p-2" data-bs-toggle="modal"
+                data-bs-target="#relPassageModal">发布文章</button>
+        </div>
+
+    </div>
+    <div class="row justify-content-center align-items-center g-2 passagesContainer">
+        <!-- <div class="col-6 p-3">
+            <div class="card" data-passageId="0">
+                <div class="row justify-content-center align-items-center g-2">
+                    <div class="col-2 ps-2 pt-2">
+                        <img class="rounded-circle owava w-100" src="/uploads/uid_GUEST.png" alt="Passage_Owner_Avatar">
+                    </div>
+                    <div class="col-10 pt-2">
+                        <h4>作者： <span class="owner"></span></h4>
+                    </div>
+                </div>
+                
+                    
+                
+                
+                <div class="card-body">
+                    <h4 class="card-title pt">Diary#1:无标题</h4>
+                    <p class="card-text pb">Diary Music</p>
+
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<!-- Modal trigger button -->
+<!-- <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#passageModal">
+  Launch
+</button> -->
+
+<!-- Modal Body -->
+<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+<div class="modal fade" id="passageModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+    aria-labelledby="passageModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title pmt">
+
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body pmb">
+
+            </div>
+            <div class="p-0 modal-footer pmf justify-content-start">
+
+            </div>
+            <div class="modal-body">
+                <div class="logo-name comments p-3 ps-2" style="opacity:0;justify-content: space-between;">
+                    <span data-show='showque'>评论：</span>
+                    <a class="" data-show='showque'>发表评论</a>
+                </div>
+                <div class="container-fluid mb-3">
+                    <!-- ========== Start writeComment ========== -->
+                    <div class="row">
+                        <div class="logo-name ps-0 mb-1" data-commenter="commenter" data-commenterId=""
+                            data-commenterId="">
+                            <div class="logo-image commenter">
+                                <img src="" alt="" id=""
+                                    class="commenter-avatar userAvatar" data-show='showque'>
+                            </div>
+                            <span class="commenter-name userName pe-3 d-flex d-md-flex"
+                                id="" data-show='showque'></span>
+                        </div>
+                        <div class="row justify-content-center align-items-center g-2">
+                            <div class="col-md-10 col-sm-12 d-flex">
+                                <input type="text" class="form-control" name="comment" placeholder="说点什么···" data-show='showque'>
+                            </div>
+                            <div class="col-md-2 col-sm-12 d-flex flex-row justify-content-end">
+                                <button type="button" class="btn btn-outline-dark w-100 relCommentBtn" onclick="cb(this)" data-parentId="" data-show='showque'>评论</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- ========== End writeComment ========== -->
+                </div>
+                <div class="separator pb-3">
+                </div>
+                <div class="container-fluid commentsContainer">
+
+                    <!-- ========== Start comment ========== -->
+                    <div class="row ms-3 mb-3">
+                        <div class="logo-name ps-0 mb-1" data-commenter="commenter" data-commenterId=""
+                            data-commenterId="">
+                            <div class="logo-image commenter">
+                                <img src="/uploads/uid_31284538-a29d-2de3-e472-a24b49e7d86d.png" alt="" id=""
+                                    class="commenter-avatar">
+                            </div>
+                            <span class="commenter-name pe-3 d-none d-md-flex"
+                                id="">VirtualZone</span>
+                            <span class="logo_uid pe-3 d-none d-md-flex commenter-id">UID: 2</span>
+                        </div>
+                        <blockquote class="blockquote mb-1 p-1">
+                            暂未开放评论功能，敬请期待！
+                        </blockquote>
+                        <a>回复</a>
+                    </div>
+                    <!-- ========== End comment ========== -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="relPassageModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+    role="dialog" aria-labelledby="relPassageModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title rpmt">
+                    发布
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body rpmb">
+                <div class="container">
+                    <div class="mb-3 row">
+                        <legend class="col-form-legend  col-md-4 col-sm-1">标题</legend>
+                        <div class=" col-md-8 col-sm-1">
+                            <input type="text" class="form-control" name="title" id="title" placeholder="标题" value="">
+                            <p class="text-muted">tip：更新、发布、事件···</p>
+                        </div>
+                    </div>
+                    <fieldset class="mb-3 row">
+                        <legend class="col-form-legend col-md-4 col-sm-12 mb-3">
+                            <span class="mb-3">内容</span>
+                            <br>
+                            <!-- <div class="mb-3 row"> -->
+                            <!-- <div class="offset-sm-4 col-sm-8"> -->
+                            <button type="button" class="submit btn btn-outline-dark mb-3 me-2">发布</button>
+                            <button type="button" class="append btn btn-outline-dark mb-3 me-2">追加段落</button>
+                        </legend>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="mb-3 paragraphs">
+                                <textarea class="form-control mb-3 cont" data-inputId="0" name="cont" rows="3"
+                                    aria-label="段落">段落0</textarea>
+                                <a class="closeTextArea" data-close="0">&times;</a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="p-0 modal-footer rpmf justify-content-start">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional: Place to the bottom of scripts -->
+
+<script>
+jsLoader("crypt/sha256.js")
+</script>
+<script src="/js/src/bs/broadcast/comment.js"></script>
+<script src="/js/src/bs/broadcast/getPassage.js"></script>
+<style>
+    .card {
+        border: 0;
+        transition: all 0.4s;
+        /* box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1); */
+    }
+
+    .passagesContainer .card:hover,
+    .card:focus {
+        border: 0.4px, #000000 !important;
+        transform: scale(1.05) !important;
+        box-shadow: 0px 16px 21px -8px rgba(0, 0, 0, 0.3) !important;
+
+    }
+
+    .card:hover~* {
+        transform: scale(1.05);
+        filter: blur(20px);
+    }
+
+    .modal-content {
+        border: 0;
+
+    }
+    .commenter-name{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--text-color);
+    margin-left: 14px;
+    transition: all 0.4s;
+}
+.p{
+    white-space: pre-wrap;
+}
+</style>
